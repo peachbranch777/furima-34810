@@ -11,7 +11,7 @@
 | last_name          | string | null: false               |
 | first_name_kana    | string | null: false               |
 | last_name_kana     | string | null: false               |
-| birthday           | string | null: false               |
+| birthday           | date   | null: false               |
 
 ### Association
 - has_many :items
@@ -24,11 +24,11 @@
 | name            | string      | null: false                    |
 | description     | text        | null: false                    |
 | price           | integer     | null: false                    |
-| category        | integer     | null: false                    |
-| condition       | integer     | null: false                    |
-| delivery_charge | integer     | null: false                    |
-| delivery_area   | integer     | null: false                    |
-| delivery_day    | integer     | null: false                    |
+| item_id         | integer     | null: false                    |
+| item_id         | integer     | null: false                    |
+| item_id         | integer     | null: false                    |
+| item_id         | integer     | null: false                    |
+| item_id         | integer     | null: false                    |
 | user            | references  | null: false, foreign_key: true |
 
 ### Association
@@ -41,7 +41,6 @@
 | ----------- | ---------- | ------------------------------ |
 | user        | references | null: false, foreign_key: true |
 | item        | references | null: false, foreign_key: true |
-| information | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -50,14 +49,15 @@
 
 ## informationテーブル
 
-| Colum        | Type    | Options     |
-| ------------ | ------- | ----------- |
-| post_code    | string  | null: false |
-| prefecture   | string  | null: false |
-| city         | string  | null: false |
-| block        | string  | null: false |
-| building     | string  |             |
-| phone_number | string  | null: false |
+| Colum        | Type    | Options                           |
+| ------------ | ------- | --------------------------------- |
+| post_code    | string  | null: false                       |
+| item_id      | string  | null: false                       |
+| city         | string  | null: false                       |
+| block        | string  | null: false                       |
+| building     | string  |                                   |
+| phone_number | string  | null: false                       |
+| order        | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :order
