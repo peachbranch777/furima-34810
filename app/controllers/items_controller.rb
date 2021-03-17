@@ -54,7 +54,7 @@ class ItemsController < ApplicationController
   end
 
   def move_to_root
-    current_user.id == @item.user.id && @item.order.present?
+    current_user.id == @item.user.id || @item.order.present?
     redirect_to root_path
   end
 end
