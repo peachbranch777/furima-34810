@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
   const priceInput = document.getElementById("item-price")
+  if (!priceInput){ return false;}
   priceInput.addEventListener('input', () => {
     const inputValue = priceInput.value;
     
@@ -10,5 +11,5 @@ window.addEventListener('load', () => {
     const profitPrice = document.getElementById("profit")
     const profitValue = inputValue * 0.1;
     profitPrice.innerHTML = (Math.floor(inputValue - profitValue));
-  })
+  });
 });
