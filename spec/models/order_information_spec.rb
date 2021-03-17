@@ -78,8 +78,13 @@ RSpec.describe OrderInformation, type: :model do
         @order_information.valid?
         expect(@order_information.errors.full_messages).to include "Phone number can't be blank"
       end
-      it 'phone_numberが11桁ない時' do
-        @order_information.phone_number = "1234567890"
+      it 'phone_numberが12桁以上の時' do
+        @order_information.phone_number = "123456789088"
+        @order_information.valid?
+        expect(@order_information.errors.full_messages).to include "Phone number is invalid"
+      end
+      it 'phone_numberが英数混合では登録できないこと' do
+        @order_information.phone_number = "12345678oo"
         @order_information.valid?
         expect(@order_information.errors.full_messages).to include "Phone number is invalid"
       end
