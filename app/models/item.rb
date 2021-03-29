@@ -8,12 +8,12 @@ class Item < ApplicationRecord
     validates :delivery_charge_id
     validates :delivery_day_id
     validates :prefecture_id
-    validates :images
+    validates :image
   end
 
 
 
-  has_many_attached :images
+  has_one_attached :image
   belongs_to :user
   has_one :order
   
